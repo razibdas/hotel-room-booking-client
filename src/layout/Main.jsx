@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../pages/Shared/Footer/Footer";
-import Navbar from "../pages/Shared/Navbar/Navbar";
+import Banner from "../pages/Banner/Banner";
 
-
+import './Main.css'
+// import ParallaxEffect from "../pages/Shared/Parallax/ParallaxEffect";
 const Main = () => {
     return (
         <div>
-            <Navbar></Navbar>
+  
+            <Banner></Banner>
+            {/* <ParallaxEffect></ParallaxEffect> */}
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

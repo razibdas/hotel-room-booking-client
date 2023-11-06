@@ -1,0 +1,25 @@
+
+/* styles.css */
+@keyframes colorJump {
+    0% {
+      color: red;
+    }
+    25% {
+      color: blue;
+    }
+    50% {
+      color: green;
+    }
+    75% {
+      color: orange;
+    }
+    100% {
+      color: red;
+    }
+  }
+  
+  .color-jump {
+    animation: colorJump 2s infinite;
+  }
+  
+  

@@ -1,0 +1,39 @@
+.parallax-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    position: relative;
+  }
+  
+  .parallax {
+    background-image: ("https://i.ibb.co/ynL25n3/kelsey-curtis-27u-Gzl-AFw-unsplash.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .content {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .video-parallax {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  

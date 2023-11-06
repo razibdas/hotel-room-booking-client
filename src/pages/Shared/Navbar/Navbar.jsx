@@ -31,7 +31,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar backdrop-brightness-50 px-8">
+        <div className="navbar px-8">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn  lg:hidden">
