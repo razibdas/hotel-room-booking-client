@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import RoomCard from "../RoomCard/RoomCard";
 import Typewriter from 'typewriter-effect';
+import Banner from "../../Banner/Banner";
+import Footer from "../../Shared/Footer/Footer";
 
 const Home = () => {
 
@@ -8,6 +10,7 @@ const Home = () => {
 
     return (
         <div>
+            <Banner></Banner>
             <div className="mt-8 text-4xl flex items-center justify-center">
                 <Typewriter
                     options={{
@@ -22,6 +25,7 @@ const Home = () => {
                     rooms.map(room => <RoomCard key={room._id} room={room}></RoomCard>)
                 }
             </div>
+            <Footer></Footer>
         </div>
     );
 };

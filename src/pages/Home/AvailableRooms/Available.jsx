@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-const RoomCard = ({ room }) => {
-    const { image, price, descripiton } = room;
+const Available = ({available}) => {
+    const { image, price, descripiton } = available;
     return (
         <div className="card card-compact  bg-base-100 shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
@@ -16,4 +16,4 @@ const RoomCard = ({ room }) => {
     );
 };
 
-export default RoomCard;
+export default Available;
