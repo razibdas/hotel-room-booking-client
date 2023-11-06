@@ -17,7 +17,7 @@ const Navbar = () => {
         <li className="mr-2 rounded-lg text-white">
             <NavLink to="/" className="home-link">Home</NavLink>
         </li>
-        <li className="mr-2 rounded-lg text-white"><NavLink to="jfkj">Rooms</NavLink></li>
+        <li className="mr-2 rounded-lg text-white"><NavLink to="/rooms">Rooms</NavLink></li>
         <li className="mr-2 rounded-lg text-white"><NavLink>My Booking</NavLink></li>
         {user?.email ? <>
             {/* <li><Link to='/booking'>My Bookings</Link></li> */}
