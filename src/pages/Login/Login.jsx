@@ -1,6 +1,6 @@
 
-import { Link } from 'react-router-dom';
-import img from '../../assets/image/login.svg'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+// import img from '../../assets/image/login.svg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
@@ -19,9 +19,9 @@ const Login = () => {
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
 
-    // const location = useLocation();
-    // const navigate = useNavigate();
-    // console.log(location);
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(location);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -33,12 +33,12 @@ const Login = () => {
         signIn(email, password)
             .then((user) => {
                 Swal.fire({
-                    title: 'user created successfully.!',
+                    title: 'Login successfully.!',
                     icon: 'success',
 
                 })
                 console.log(user);
-                // navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location?.state : '/')
 
             })
             .catch((error) => {
@@ -66,7 +66,7 @@ const Login = () => {
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col lg:flex-row">
                         <div className=" w-1/2 mr-12">
-                            <img src={img} alt="" />
+                            <img src="https://i.ibb.co/nw4QZyw/account-login-8677600-6981645.webp" alt="" />
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <div className="card-body">

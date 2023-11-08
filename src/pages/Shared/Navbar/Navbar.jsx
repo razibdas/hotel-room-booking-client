@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import image from '../../../assets/image/Logo Resize-01.png'
 
 const Navbar = () => {
 
@@ -18,7 +19,7 @@ const Navbar = () => {
             <NavLink to="/" className="home-link">Home</NavLink>
         </li>
         <li className="mr-2 rounded-lg text-white"><NavLink to="/rooms">Rooms</NavLink></li>
-        <li className="mr-2 rounded-lg text-white"><NavLink to="/booking">My Booking</NavLink></li>
+        <li className="mr-2 rounded-lg text-white"><NavLink to="/mybooking">My Booking</NavLink></li>
         {user?.email ? <>
             {/* <li><Link to='/booking'>My Bookings</Link></li> */}
             <li className="text-white"><button onClick={handleLogOut}>Log Out</button></li>
@@ -41,7 +42,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <img className="ml-2 w-[100px] h-[100px]" src="https://i.ibb.co/Xb7WR5Z/logo-12-1.png" alt="" />
+                <img className="ml-2 w-[100px] h-[100px]" src="https://i.ibb.co/ZhD86vq/Logo-Resize-01.png" alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
