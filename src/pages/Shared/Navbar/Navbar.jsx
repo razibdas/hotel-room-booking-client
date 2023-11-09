@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-import image from '../../../assets/image/Logo Resize-01.png'
+import image from '../../../assets/image/reseize.png'
 
 const Navbar = () => {
 
@@ -42,7 +42,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <img className="ml-2 w-[100px] h-[100px]" src="https://i.ibb.co/ZhD86vq/Logo-Resize-01.png" alt="" />
+                <img className="ml-2 w-[100px] h-[100px]" src={image} alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -90,18 +90,6 @@ const Navbar = () => {
                         </div>
                     )}
 
-                    {/* {user ? (
-                        <>
-                            {showDisplayName && <button className="text-white">{user.displayName}</button>}
-                            <button onClick={handleLogOut} className="btn">
-                                Sign Out
-                            </button>
-                        </>
-                    ) : (
-                        <Link to="/login">
-                            <button className="btn">Login</button>
-                        </Link>
-                    )} */}
                 </div>
 
             </div>

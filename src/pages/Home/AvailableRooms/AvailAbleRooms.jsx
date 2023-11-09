@@ -22,19 +22,19 @@ const AvailAbleRooms = () => {
 
     useEffect(() => {
         if (selectedValue === 'low') {
-            fetch('http://localhost:5000/sortedPrice/low')
+            fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/sortedPrice/low')
 
                 .then(res => res.json())
                 .then(data => setAvailables(data))
         }
         else if (selectedValue === 'high') {
-            fetch('http://localhost:5000/sortedPrice/high')
+            fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/sortedPrice/high')
 
                 .then(res => res.json())
                 .then(data => setAvailables(data))
         }
         else {
-            fetch('http://localhost:5000/availableRooms')
+            fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/availableRooms')
 
                 .then(res => res.json())
                 .then(data => setAvailables(data))

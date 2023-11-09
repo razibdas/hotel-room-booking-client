@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('http://localhost:5000/room')
+            loader: () => fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/room')
         },
         {
             path: '/login',
@@ -35,17 +35,11 @@ const router = createBrowserRouter([
         {
           path: '/rooms',
           element: <AvailAbleRooms></AvailAbleRooms>,
-          // loader: () => fetch('http://localhost:5000/availableRooms')
         },
-        // {
-        //   path: '/details',
-        //   element: <Details></Details>,
-        //   loader: () => fetch('<Details></Details>,')
-        // },
         {
           path: '/details/:id',
           element: <Details></Details>,
-          loader: ({params}) => fetch(`http://localhost:5000/availableRooms/${params.id}`)
+          loader: ({params}) => fetch(`https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/availableRooms/${params.id}`)
         },
         {
           path: '/mybooking',
@@ -54,7 +48,7 @@ const router = createBrowserRouter([
         {
           path: '/book/:id',
           element: <BookingsAll></BookingsAll>,
-          loader: ({params}) => fetch(`http://localhost:5000/availableRooms/${params.id}`)
+          loader: ({params}) => fetch(`https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/availableRooms/${params.id}`)
         }
       ]
     },
