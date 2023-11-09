@@ -65,8 +65,8 @@ const Login = () => {
             <div>
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col lg:flex-row">
-                        <div className=" w-1/2 mr-12">
-                            <img src="https://i.ibb.co/nw4QZyw/account-login-8677600-6981645.webp" alt="" />
+                        <div className=" w-1/2 mr-12 ">
+                            <img className='lg:w-[500px] lg:h-[400px]' src="https://i.ibb.co/nw4QZyw/account-login-8677600-6981645.webp" alt="" />
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <div className="card-body">

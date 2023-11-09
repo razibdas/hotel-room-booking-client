@@ -13,8 +13,8 @@ const Available = ({ available }) => {
                     <div className="card-body">
                         <h2 className="card-title">Price: ${price}</h2>
                         <p>{description}</p>
-                        <div className="card-actions justify-end">
-                           <Link to={`/details/${_id}`}> <button className="btn btn-primary">View Details</button></Link>
+                        <div className="card-actions justify-end w-full">
+                           <Link to={`/details/${_id}`} className='w-full'> <button className="btn btn-primary w-full text-white">View Details</button></Link>
                         </div>
                     </div>
                 </div>

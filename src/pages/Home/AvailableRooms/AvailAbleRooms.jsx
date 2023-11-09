@@ -60,8 +60,8 @@ const AvailAbleRooms = () => {
                 <form>
                     <select onChange={handleOnChange} className="select select-bordered w-full max-w-xs" name="sortPrice" value={selectedValue}>
                         <option value={'all'}>All Price</option>
-                        <option value={'high'}>Price high</option>
-                        <option value={'low'}>Price low</option>
+                        <option value={'high'}>Price High to Low</option>
+                        <option value={'low'}>Price Low to High</option>
                     </select>
                 </form>
             </div>
