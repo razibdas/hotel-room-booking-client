@@ -3,6 +3,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import BookingRow from './BookingRow';
+import Swal from 'sweetalert2'
 
 const Mybooking = () => {
 
@@ -17,23 +18,38 @@ const Mybooking = () => {
             .then(data => setBookings(data))
     }, [])
 
-    const handleDelete = id => {
-        const proceed = confirm('Are You sure you want to delete')
-        if(proceed){
-            fetch(`http://localhost:5000/bookingsAll/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if(data.deletedCount > 0){
-                        alert('deleted successfully')
-                        const remaining = bookings.filter(booking =>booking._id !== id);
-                        setBookings(remaining)
-                    }
+
+
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure you want to delete?',
+            text: 'This action cannot be undone!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/bookingsAll/${id}`, {
+                    method: 'DELETE',
                 })
-        }
-    }
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire('Deleted successfully!', '', 'success');
+
+                            const remaining = bookings.filter((booking) => booking._id !== id);
+                            setBookings(remaining);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error deleting:', error);
+                    });
+            }
+        });
+    };
+
 
     return (
         <div>
@@ -41,7 +57,7 @@ const Mybooking = () => {
                 <Navbar></Navbar>
             </div>
             <div className='w-[800px] h-[600px] mt-12 mx-auto'>
-               
+
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
@@ -59,10 +75,10 @@ const Mybooking = () => {
                             </tr>
                         </thead>
                         <tbody>
-                           {
-                                bookings.map(booking => <BookingRow key={booking.id}booking={booking}
-                                handleDelete={handleDelete}></BookingRow>)
-                           }
+                            {
+                                bookings.map(booking => <BookingRow key={booking.id} booking={booking}
+                                    handleDelete={handleDelete}></BookingRow>)
+                            }
                         </tbody>
 
                     </table>

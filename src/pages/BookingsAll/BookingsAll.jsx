@@ -1,15 +1,17 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Navbar from "../Shared/Navbar/Navbar";
+import Footer from "../Shared/Footer/Footer";
 
 const BookingsAll = () => {
 
     const loaded = useLoaderData();
     console.log(loaded);
 
-    const {price, description, title, image} = loaded;
+    const { price, description, title, image } = loaded;
 
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const handleBookNow = event => {
         event.preventDefault();
@@ -39,41 +41,51 @@ const BookingsAll = () => {
                 console.log(data);
             })
     }
-  
+
 
     return (
-        <div className="card-body">
-            <form onSubmit={handleBookNow}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Name</span>
-                        </label>
-                        <input type="text" name="name" defaultValue={user?.displayName} className="input input-bordered" required />
+
+        <div>
+            <div className="backdrop-brightness-50">
+                <Navbar></Navbar>
+            </div>
+            <div className="card-body w-[800px] mt-12 backdrop-brightness-50 mx-auto">
+                <h2 className="text-4xl text-center text-white">Booking Now</h2>
+                <form onSubmit={handleBookNow}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name="name" defaultValue={user?.displayName} className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Date</span>
+                            </label>
+                            <input type="date" name="date" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="email" name='email' placeholder="email" defaultValue={user?.email} className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Due Amount</span>
+                            </label>
+                            <input type="text" defaultValue={'$' + price} className="input input-bordered" required />
+                        </div>
                     </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Date</span>
-                        </label>
-                        <input type="date" name="date" className="input input-bordered" required />
+                    <div className="form-control mt-6">
+                        <input className="btn btn-secondary btn-block" type="submit" value={'Book Confirm'} />
                     </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input type="email" name='email' placeholder="email" defaultValue={user?.email} className="input input-bordered" required />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Due Amount</span>
-                        </label>
-                        <input type="text" defaultValue={'$' + price} className="input input-bordered" required />
-                    </div>
-                </div>
-                <div className="form-control mt-6">
-                    <input className="btn btn-secondary btn-block" type="submit" value={'Book Confirm'} />
-                </div>
-            </form>
+                </form>
+            </div>
+            <div className="mt-12">
+                <Footer></Footer>
+            </div>
         </div>
     );
 };
