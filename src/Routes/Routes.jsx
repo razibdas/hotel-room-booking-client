@@ -10,6 +10,7 @@ import AvailAbleRooms from "../pages/Home/AvailableRooms/AvailAbleRooms";
 import Mybooking from "../pages/Shared/Mybooking/Mybooking";
 import PrivateRoutes from "./PrivateRoute";
 import Details from "../pages/Home/Details/Details";
+import BookingsAll from "../pages/BookingsAll/BookingsAll";
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
         {
           path: '/mybooking',
           element: <PrivateRoutes><Mybooking></Mybooking></PrivateRoutes>
+        },
+        {
+          path: '/book/:id',
+          element: <BookingsAll></BookingsAll>,
+          loader: ({params}) => fetch(`http://localhost:5000/availableRooms/${params.id}`)
         }
       ]
     },

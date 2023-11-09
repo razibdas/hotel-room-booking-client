@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -16,7 +16,7 @@ const Details = () => {
     const details = useLoaderData();
 
     console.log(details);
-    const { price, description, image, title, size , place} = details;
+    const {_id, price, description, image, title, size, place } = details;
 
     return (
         <div>
@@ -62,7 +62,11 @@ const Details = () => {
                     <h2>Location: {place}</h2>
                     <h2>Ratings:</h2>
                     <h2>Description: {description}</h2>
+                    <div className="mt-12">
+                       <Link to={`/book/${_id}`}> <button className="btn btn-secondary text-white">Booking Now</button></Link>
+                    </div>
                 </div>
+
             </div>
             <Footer></Footer>
         </div>
