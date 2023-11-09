@@ -1,7 +1,8 @@
-import  { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import BookingRow from './BookingRow';
 
 const Mybooking = () => {
 
@@ -21,8 +22,32 @@ const Mybooking = () => {
             <div className='backdrop-brightness-50'>
                 <Navbar></Navbar>
             </div>
-            <div>
-                <h2>My Boookings: {bookings.length}</h2>
+            <div className='w-[800px] h-[600px] mt-12 mx-auto'>
+               
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label>
+                                        <input type="checkbox" className="checkbox" />
+                                    </label>
+                                </th>
+                                <th>Profile</th>
+                                <th>Email</th>
+                                <th>Email</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           {
+                                bookings.map(booking => <BookingRow key={booking.id}booking={booking}></BookingRow>)
+                           }
+                        </tbody>
+
+                    </table>
+                </div>
             </div>
             <Footer></Footer>
         </div>
