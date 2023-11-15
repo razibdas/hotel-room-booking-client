@@ -10,7 +10,7 @@ const Mybooking = () => {
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([])
 
-    const url = `https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/bookingsAll?email=${user?.email}`
+    const url = `https://hotel-room-server-kappa.vercel.app/bookingsAll?email=${user?.email}`
 
     useEffect(() => {
         fetch(url)
@@ -30,7 +30,7 @@ const Mybooking = () => {
             cancelButtonText: 'No, cancel!',
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/bookingsAll/${id}`, {
+                fetch(`https://hotel-room-server-kappa.vercel.app/bookingsAll/${id}`, {
                     method: 'DELETE',
                 })
                     .then((res) => res.json())

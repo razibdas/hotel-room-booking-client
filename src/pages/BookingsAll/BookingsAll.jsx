@@ -29,7 +29,7 @@ const BookingsAll = () => {
         }
         console.log(book);
 
-        fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/bookingsAll', {
+        fetch('https://hotel-room-server-kappa.vercel.app/bookingsAll', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

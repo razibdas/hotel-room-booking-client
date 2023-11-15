@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/room')
+            loader: () => fetch('https://hotel-room-server-kappa.vercel.app/room')
         },
         {
             path: '/login',
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         {
           path: '/details/:id',
           element: <Details></Details>,
-          loader: ({params}) => fetch(`https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/availableRooms/${params.id}`)
+          loader: ({params}) => fetch(`https://hotel-room-server-kappa.vercel.app/availableRooms/${params.id}`)
         },
         {
           path: '/mybooking',
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         {
           path: '/book/:id',
           element: <BookingsAll></BookingsAll>,
-          loader: ({params}) => fetch(`https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/availableRooms/${params.id}`)
+          loader: ({params}) => fetch(`https://hotel-room-server-kappa.vercel.app/availableRooms/${params.id}`)
         }
       ]
     },

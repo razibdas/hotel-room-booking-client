@@ -22,19 +22,19 @@ const AvailAbleRooms = () => {
 
     useEffect(() => {
         if (selectedValue === 'low') {
-            fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/sortedPrice/low')
+            fetch('https://hotel-room-server-kappa.vercel.app/sortedPrice/low')
 
                 .then(res => res.json())
                 .then(data => setAvailables(data))
         }
         else if (selectedValue === 'high') {
-            fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/sortedPrice/high')
+            fetch('https://hotel-room-server-kappa.vercel.app/sortedPrice/high')
 
                 .then(res => res.json())
                 .then(data => setAvailables(data))
         }
         else {
-            fetch('https://hotel-room-server-enidu8vy6-razibs-projects-f5b9e70e.vercel.app/availableRooms')
+            fetch('https://hotel-room-server-kappa.vercel.app/availableRooms')
 
                 .then(res => res.json())
                 .then(data => setAvailables(data))
